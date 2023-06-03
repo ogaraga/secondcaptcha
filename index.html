@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <title>Second Captcha</title>
+</head>
+<body id="body">
+    <div class="captcha-container" id="captcha-container">
+        <div class="chartz" id="chartz"> Must contain 3 or more of these chars:<p>@, a, p, !, 5, 9, 0, 1, 3, d, %, &, t, f, A, S, D, F, T, 7, 6, h, s, w, x, z, y, q, B, M, Z, X, Q, W, P, K, J, L, E</p>
+        </div>
+        <div class="captcha-wrapper" id="captcha-wrapper">
+            <span class="captcha" id="captcha" aria-disabled="true">@dAHt$#45l</sup>
+        </div>
+        <span class="repeat-wraper" id="wrapperfa">
+            <i class="fa-solid fa-repeat" id="repeat"></i>
+        </span>
+        <label id="mylabel"></label>
+        <div class="user-textarea-container" id="user">
+            <input type="text" name="user-input" id="textbox" title="Must contain 10 characters" placeholder="Enter captcha here">
+            <button type="button" id="btn">Enter</button>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        var myTrueCase;
+        var lenz = 0;
+        var submit = document.getElementById("submit");
+        var captchaWrapper = document.getElementById("captcha-wrapper");
+        var mylabel = document.getElementById("mylabel");
+        var wrapperFa = document.getElementById("wrapperfa");
+        var MyCaptcha = document.getElementById("captcha");
+        var textbox = document.getElementById("textbox");
+        var myRepeat = document.getElementById("repeat");
+        var enter = document.getElementById("btn");
+        var myChar = document.getElementById("chartz");
+        var allowedChar = ['@', 'a', 'p', '!', '5', '9', '0', '1', '3', 'd', '%', '&', 't', 'f', 'A', 'S', 'D', 'F', 'T', '7', '6', 'h', 's', 'w', 'x', 'z', 'y', 'q', 'B', 'M', 'Z', 'X', 'Q', 'W', 'P', 'K', 'J', 'L', 'E'];
+        var captcha = ['z','y','x','w','v','u','t','s','r','i','h','X','V','U','T','S','g','f','e','d','c','b','a','Z','Y','R','Q','P','O','N','M','L','K','J','I','H','G','F','E','q','p','o','n','m','l','k','j','D','C','B','A','&','%','$','#','@','!','1','2','3','4','5','6','7','8','9','0']
+        // generate captcha
+        myRepeat.onclick = ()=>{
+                        $(()=>{
+                $("#repeat").mouseover(()=>{
+                    $("#wrapperfa").css("background", "rgb(10, 40, 2)");
+                    $("#repeat").css("color", "crimson");
+                });
+                $("#repeat").mouseout(()=>{
+                    $("#wrapperfa").css("background", "white");
+                    $("#repeat").css("color", "black");
+                });
+                                
+            });
+            setTimeout(() => {
+                MyCaptcha.innerText = "";
+            for(let k = 0; k < 10; k++){
+                let randomnumeral = Math.floor(Math.random() * captcha.length);
+                const captchaArray = captcha[randomnumeral].split(' ').join(' ');
+                MyCaptcha.innerText += captchaArray;
+            } 
+                
+            MyCaptcha.style.background = "silver";
+            MyCaptcha.style.color = "white";
+            MyCaptcha.style.letterSpacing = `16px`;
+            MyCaptcha.style.textDecoration = `line-through`;
+            wrapperFa.style.background = "yellow";
+            myRepeat.style.color = "green";
+            myRepeat.style.transform = "scale(1.0)";
+        
+            }, 1200);
+
+            setInterval(() => {
+            MyCaptcha.innerText = `EXPIRED!`;
+            MyCaptcha.style.color = `red`;
+            MyCaptcha.style.textDecoration = `none`;
+        }, 70000);
+        
+         
+        };
+
+        // Add event listener on clicking button "enter"
+        enter.addEventListener("click", ()=>{
+            // generate allowable characters atleast one shows up
+            
+            for (let i = 0; i < 4; i++) {
+               const randomMyNum = Math.floor(Math.random() * allowedChar.length);
+                let allowedArr = allowedChar[randomMyNum].split('').join('');
+                myTrueCase = allowedArr.match('x') 
+                let myTrueCase1 = allowedArr.match('A') 
+                let myTrueCase2 = allowedArr.match('a') 
+                let myTrueCase3 = allowedArr.match('X') 
+                let myTrueCase4 = allowedArr.match('@') 
+                let myTrueCase5 = allowedArr.match('t') 
+                let myTrueCase6 = allowedArr.match('Q') 
+                let myTrueCase7 = allowedArr.match('P') 
+                let myTrueCase8 = allowedArr.match('k') 
+                let myTrueCase9 = allowedArr.match('5');
+                let myTrueCase91 = allowedArr.match('s');
+                let myTrueCase92 = allowedArr.match('!');
+                let myTrueCase93 = allowedArr.match('q');
+                let myTrueCase94 = allowedArr.match('j');
+                let myTrueCase95 = allowedArr.match('0');
+                let myTrueCase96 = allowedArr.match('3');
+                let myTrueCase97 = allowedArr.match('9');
+                let myTrueCase98 = allowedArr.match('d');
+                let myTrueCase99 = allowedArr.match('w');
+                let myTrueCase90 = allowedArr.match('f');        
+                      
+            
+    
+            if(textbox.value === MyCaptcha.innerText && MyCaptcha.innerText !== "CAPTCHA => USED!" &&
+                MyCaptcha.innerText !== "@dAHt$#45l" && MyCaptcha.innerText !== "EXPIRED!" || MyCaptcha.innerText.includes('x') == myTrueCase||MyCaptcha.innerText.includes('A') == myTrueCase1||
+                MyCaptcha.innerText.includes('a') == myTrueCase2||MyCaptcha.innerText.includes('X') == myTrueCase3||MyCaptcha.innerText.includes('@') == myTrueCase4||
+                MyCaptcha.innerText.includes('t') == myTrueCase5||MyCaptcha.innerText.includes('Q') == myTrueCase6||MyCaptcha.innerText.includes('P') == myTrueCase7||
+                MyCaptcha.innerText.includes('5') == myTrueCase9||MyCaptcha.innerText.includes('s') == myTrueCase91||MyCaptcha.innerText.includes('f') == myTrueCase90||
+                MyCaptcha.innerText.includes('!') == myTrueCase92||MyCaptcha.innerText.includes('q') == myTrueCase93||MyCaptcha.innerText.includes('J') == myTrueCase94||
+                MyCaptcha.innerText.includes('0') == myTrueCase95||MyCaptcha.innerText.includes('3') == myTrueCase96||MyCaptcha.innerText.includes('9') == myTrueCase97||
+                MyCaptcha.innerText.includes('K') == myTrueCase8||MyCaptcha.innerText.includes('d') == myTrueCase97||MyCaptcha.innerText.includes('w') == myTrueCase98||
+                MyCaptcha.innerText.includes('w') === myTrueCase99){
+
+
+                mylabel.textContent = `Correct characters selected! Proceed to the next page!`;
+                mylabel.style.color = `green`;
+                mylabel.style.background = `silver`;
+                textbox.value = "";
+                myChar.innerText = " Correct! 3 or more selected!";
+                myChar.style.color = "green";    
+                MyCaptcha.style.textDecoration = `none`;
+                MyCaptcha.style.letterSpacing = `5px`;
+                captchaWrapper.style.width = "70%";
+                MyCaptcha.style.color = `red`;
+                return MyCaptcha.innerText = `CAPTCHA => USED!`;
+            
+            }
+            else{
+                mylabel.textContent = `Wrong Captcha picked! You are not a human!`;
+                mylabel.style.color = `red`;
+                myChar.innerText = "Must contain 3 or more characters!"
+                myChar.style.color = "red";
+                mylabel.style.background = `silver`;
+                textbox.value = "";
+               return MyCaptcha.innerText
+            }
+        }
+        })
+        let captchaContainer = document.getElementById("captcha-container");
+        const body = document.getElementById("body");
+        submit.onclick = (e)=>{
+            if (MyCaptcha.innerText === "CAPTCHA => USED!" && mylabel.textContent !== "Wrong Captcha picked! You are not a human!" && myChar.innerText !== "Must contain 3 or more characters!" && myChar.innerText !== "Refresh the page") {
+            captchaContainer.style.display = "none";
+            body.innerHTML = `You have successfully logged in!`;
+            body.style.margin = "20% auto";
+            body.style.background = "grey";
+            body.style.color = "green";
+            body.style.fontSize = "30px";
+            body.style.display = "flex";
+            body.style.alignItems = "center";
+            body.style.justifyContent = "center";
+            
+        }
+        else{
+            captchaContainer.style.display = "flex";
+            mylabel.innerText = `You have not picked any captcha!`;
+            mylabel.style.color = `red`;
+            mylabel.style.background = `silver`;
+            myChar.innerText = "Refresh the page!"
+            return false
+        }
+        }
+    
+    
+    </script>
+</body>
+</html>

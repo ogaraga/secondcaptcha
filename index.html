@@ -28,7 +28,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         var myTrueCase;
-        var lenz = 0;
         var submit = document.getElementById("submit");
         var captchaWrapper = document.getElementById("captcha-wrapper");
         var mylabel = document.getElementById("mylabel");
@@ -129,7 +128,7 @@
                 myChar.style.color = "green";    
                 MyCaptcha.style.textDecoration = `none`;
                 MyCaptcha.style.letterSpacing = `5px`;
-                captchaWrapper.style.width = "70%";
+                captchaWrapper.style.width = "auto";
                 MyCaptcha.style.color = `red`;
                 return MyCaptcha.innerText = `CAPTCHA => USED!`;
             

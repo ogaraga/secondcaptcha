@@ -19,7 +19,7 @@
 @media screen and (max-width: 540px) {
  .captcha-container{
     width: auto;
-    height: 100vh;
+    height: 80vh;
     margin: 40px auto;
  }   
 }
@@ -31,10 +31,9 @@
     height: auto;
     margin: auto 0;
     position: absolute;
-    top: 27%;
+    top: 35%;
     right: 0;
     left: 0;
-    /* padding: 0 170px; */
     display: flex;
     justify-content: center;
 }
@@ -43,8 +42,8 @@
        max-width: 400px;
        width: auto;
        margin: auto 0;
-       /* padding: 0 170px; */
        height: auto;
+       top: 25%;
        position: absolute;
        left: 0;
        text-align: start;
@@ -65,7 +64,7 @@
 .repeat-wraper{
     position: absolute;
     right: 0;
-    top: 27%;
+    top: 35%;
     z-index: 1;
     background-color: grey;
     font-size: 20px;
@@ -84,6 +83,7 @@
        position: absolute;
        right: 0;
        left: 85%;
+       top: 25%;
        margin: auto;
        width: auto;
        height: auto;
@@ -220,5 +220,7 @@ margin: auto;
     background-color: silver;
     color: coral;
     font-size: 21px;
+    width: 100%;
     font-weight: bold;
+    height: 18vh;
 }

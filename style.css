@@ -2,18 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .captcha-container{
     background-color: coral;
     max-width: 400px;
     width: 80%;
     max-height: 100vh;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 10% auto;
+    margin: 20px auto;
     position: relative;
 }
 @media screen and (max-width: 540px) {
@@ -117,7 +118,7 @@
    
 .user-textarea-container{
 position: absolute;
-top: 55%;
+top: 60%;
 background: gray;
 max-width: 500px;
 width: auto;
@@ -140,7 +141,7 @@ margin: auto;
 #mylabel{
     position: absolute;
     bottom: 50%;
-    top: 40%;
+    top: 50%;
     font-size: 21px;
     padding: 5px;
     text-align: center;
@@ -195,7 +196,7 @@ margin: auto;
 }
 #submit{
     position: absolute;
-    bottom: 15%;
+    bottom: 9%;
     padding: 10px 30px;
     font-size: 20px;
     border: none;
@@ -221,6 +222,7 @@ margin: auto;
     color: coral;
     font-size: 21px;
     width: 100%;
+    text-align: center;
     font-weight: bold;
     height: 18vh;
 }

@@ -86,38 +86,38 @@
             for (let i = 0; i < 4; i++) {
                const randomMyNum = Math.floor(Math.random() * allowedChar.length);
                 let allowedArr = allowedChar[randomMyNum].split('').join('');
-                myTrueCase = allowedArr.match('x') 
-                let myTrueCase1 = allowedArr.match('A') 
-                let myTrueCase2 = allowedArr.match('a') 
-                let myTrueCase3 = allowedArr.match('X') 
-                let myTrueCase4 = allowedArr.match('@') 
-                let myTrueCase5 = allowedArr.match('t') 
-                let myTrueCase6 = allowedArr.match('Q') 
-                let myTrueCase7 = allowedArr.match('P') 
-                let myTrueCase8 = allowedArr.match('k') 
-                let myTrueCase9 = allowedArr.match('5');
-                let myTrueCase91 = allowedArr.match('s');
-                let myTrueCase92 = allowedArr.match('!');
-                let myTrueCase93 = allowedArr.match('q');
-                let myTrueCase94 = allowedArr.match('j');
-                let myTrueCase95 = allowedArr.match('0');
-                let myTrueCase96 = allowedArr.match('3');
-                let myTrueCase97 = allowedArr.match('9');
-                let myTrueCase98 = allowedArr.match('d');
-                let myTrueCase99 = allowedArr.match('w');
-                let myTrueCase90 = allowedArr.match('f');        
+                myTrueCase = allowedArr.includes('x') 
+                let myTrueCase1 = allowedArr.includes('A') 
+                let myTrueCase2 = allowedArr.includes('a') 
+                let myTrueCase3 = allowedArr.includes('X') 
+                let myTrueCase4 = allowedArr.includes('@') 
+                let myTrueCase5 = allowedArr.includes('t') 
+                let myTrueCase6 = allowedArr.includes('Q') 
+                let myTrueCase7 = allowedArr.includes('P') 
+                let myTrueCase8 = allowedArr.includes('k') 
+                let myTrueCase9 = allowedArr.includes('5');
+                let myTrueCase91 = allowedArr.includes('s');
+                let myTrueCase92 = allowedArr.includes('!');
+                let myTrueCase93 = allowedArr.includes('q');
+                let myTrueCase94 = allowedArr.includes('j');
+                let myTrueCase95 = allowedArr.includes('0');
+                let myTrueCase96 = allowedArr.includes('3');
+                let myTrueCase97 = allowedArr.includes('9');
+                let myTrueCase98 = allowedArr.includes('d');
+                let myTrueCase99 = allowedArr.includes('w');
+                let myTrueCase90 = allowedArr.includes('f');        
                       
             
     
-            if(textbox.value === MyCaptcha.innerText && MyCaptcha.innerText !== "CAPTCHA => USED!" &&
-                MyCaptcha.innerText !== "@dAHt$#45l" && MyCaptcha.innerText !== "EXPIRED!" || MyCaptcha.innerText.includes('x') == myTrueCase||MyCaptcha.innerText.includes('A') == myTrueCase1||
-                MyCaptcha.innerText.includes('a') == myTrueCase2||MyCaptcha.innerText.includes('X') == myTrueCase3||MyCaptcha.innerText.includes('@') == myTrueCase4||
-                MyCaptcha.innerText.includes('t') == myTrueCase5||MyCaptcha.innerText.includes('Q') == myTrueCase6||MyCaptcha.innerText.includes('P') == myTrueCase7||
-                MyCaptcha.innerText.includes('5') == myTrueCase9||MyCaptcha.innerText.includes('s') == myTrueCase91||MyCaptcha.innerText.includes('f') == myTrueCase90||
-                MyCaptcha.innerText.includes('!') == myTrueCase92||MyCaptcha.innerText.includes('q') == myTrueCase93||MyCaptcha.innerText.includes('J') == myTrueCase94||
-                MyCaptcha.innerText.includes('0') == myTrueCase95||MyCaptcha.innerText.includes('3') == myTrueCase96||MyCaptcha.innerText.includes('9') == myTrueCase97||
-                MyCaptcha.innerText.includes('K') == myTrueCase8||MyCaptcha.innerText.includes('d') == myTrueCase97||MyCaptcha.innerText.includes('w') == myTrueCase98||
-                MyCaptcha.innerText.includes('w') === myTrueCase99){
+            if(textbox.value === MyCaptcha.innerText && textbox.value !== "CAPTCHA => USED!" && MyCaptcha.innerText !== "CAPTCHA => USED!" &&
+                MyCaptcha.innerText !== "@dAHt$#45l" && MyCaptcha.innerText !== "EXPIRED!" && (MyCaptcha.innerText.includes('x') === myTrueCase||MyCaptcha.innerText.includes('A') === myTrueCase1||
+                MyCaptcha.innerText.includes('a') === myTrueCase2||MyCaptcha.innerText.includes('X') === myTrueCase3||MyCaptcha.innerText.includes('@') === myTrueCase4||
+                MyCaptcha.innerText.includes('t') === myTrueCase5||MyCaptcha.innerText.includes('Q') === myTrueCase6||MyCaptcha.innerText.includes('P') === myTrueCase7||
+                MyCaptcha.innerText.includes('5') === myTrueCase9||MyCaptcha.innerText.includes('s') === myTrueCase91||MyCaptcha.innerText.includes('f') === myTrueCase90||
+                MyCaptcha.innerText.includes('!') === myTrueCase92||MyCaptcha.innerText.includes('q') === myTrueCase93||MyCaptcha.innerText.includes('J') === myTrueCase94||
+                MyCaptcha.innerText.includes('0') === myTrueCase95||MyCaptcha.innerText.includes('3') === myTrueCase96||MyCaptcha.innerText.includes('9') === myTrueCase97||
+                MyCaptcha.innerText.includes('K') === myTrueCase8||MyCaptcha.innerText.includes('d') === myTrueCase97||MyCaptcha.innerText.includes('w') === myTrueCase98||
+                MyCaptcha.innerText.includes('w') === myTrueCase99)){
 
 
                 mylabel.textContent = `Correct characters selected! Proceed to the next page!`;

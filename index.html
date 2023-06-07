@@ -10,7 +10,7 @@
 </head>
 <body id="body">
     <div class="captcha-container" id="captcha-container">
-        <div class="chartz" id="chartz"> Must contain 3 or more of these chars:<p>@, a, p, !, 5, 9, 0, 1, 3, d, %, &, t, f, A, S, D, F, T, 7, 6, h, s, w, x, z, y, q, B, M, Z, X, Q, W, P, K, J, L, E</p>
+        <div class="chartz" id="chartz"> Must contain 1 or more of these chars:<p>@, a, p, !, 5, 9, 0, 1, 3, d, %, &, t, f, A, S, D, F, T, 7, 6, h, s, w, x, z, y, q, B, M, Z, X, Q, W, P, K, J, L, E</p>
         </div>
         <div class="captcha-wrapper" id="captcha-wrapper">
             <span class="captcha" id="captcha" aria-disabled="true">@dAHt$#45l</sup>
@@ -27,6 +27,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
+        // variable declarations
         var myTrueCase;
         var submit = document.getElementById("submit");
         var captchaWrapper = document.getElementById("captcha-wrapper");
@@ -41,7 +42,10 @@
         var captcha = ['z','y','x','w','v','u','t','s','r','i','h','X','V','U','T','S','g','f','e','d','c','b','a','Z','Y','R','Q','P','O','N','M','L','K','J','I','H','G','F','E','q','p','o','n','m','l','k','j','D','C','B','A','&','%','$','#','@','!','1','2','3','4','5','6','7','8','9','0']
         // generate captcha
         myRepeat.onclick = ()=>{
-                        $(()=>{
+         
+            // Jquery in use simutaneously with its mother[JavaScript]
+
+            $(()=>{
                 $("#repeat").mouseover(()=>{
                     $("#wrapperfa").css("background", "rgb(10, 40, 2)");
                     $("#repeat").css("color", "crimson");
@@ -52,6 +56,7 @@
                 });
                                 
             });
+        //   set time for captcha loading
             setTimeout(() => {
                 MyCaptcha.innerText = "";
             for(let k = 0; k < 10; k++){
@@ -69,7 +74,7 @@
             myRepeat.style.transform = "scale(1.0)";
         
             }, 1200);
-
+// time interval for captcha expiration/expired/can't be used again unless refeshed.
             setInterval(() => {
             MyCaptcha.innerText = `EXPIRED!`;
             MyCaptcha.style.color = `red`;
@@ -107,7 +112,8 @@
                 let myTrueCase99 = allowedArr.includes('w');
                 let myTrueCase90 = allowedArr.includes('f');        
                       
-            
+            /* test conditions on the verification of loaded captcha 
+            corresponding to atleast provisions given prior on the captcha top*/ 
     
             if(textbox.value === MyCaptcha.innerText && textbox.value !== "CAPTCHA => USED!" && MyCaptcha.innerText !== "CAPTCHA => USED!" &&
                 MyCaptcha.innerText !== "@dAHt$#45l" && MyCaptcha.innerText !== "EXPIRED!" && (MyCaptcha.innerText.includes('x') === myTrueCase||MyCaptcha.innerText.includes('A') === myTrueCase1||
@@ -143,7 +149,9 @@
                return MyCaptcha.innerText
             }
         }
-        })
+        });
+        // if text condition match, the captcha top changes accordingly
+        
         let captchaContainer = document.getElementById("captcha-container");
         const body = document.getElementById("body");
         submit.onclick = (e)=>{

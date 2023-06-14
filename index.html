@@ -154,8 +154,9 @@
         
         let captchaContainer = document.getElementById("captcha-container");
         const body = document.getElementById("body");
+        // e.preventDefault();
         submit.onclick = (e)=>{
-            if (MyCaptcha.innerText === "CAPTCHA => USED!" && mylabel.textContent !== "Wrong Captcha picked! You are not a human!" && myChar.innerText !== "Must contain 3 or more characters!" && myChar.innerText !== "Refresh the page") {
+            if (MyCaptcha.innerText === "CAPTCHA => USED!" && (mylabel.textContent != "Wrong Captcha picked! You are not a human!" || mylabel.textContent !="You have not picked any captcha!") && myChar.innerText != "Must contain 1 or more characters!" && myChar.innerText != "Refresh the page!") {
             captchaContainer.style.display = "none";
             body.innerHTML = `You have successfully logged in!`;
             body.style.margin = "20% auto";
